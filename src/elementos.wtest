@@ -1,0 +1,8 @@
+import elementos.*
+
+test "Hogar" {
+	var casa = new Hogar(mugre = 15,confort=30)
+	
+	assert.that(casa.esBueno())
+
+}
