@@ -1,3 +1,5 @@
+import elementos.*
+
 class PlagaPulgaYGarrapata inherits Plaga{
 	method nivelDeDanio() = poblacion * 2
 }
@@ -5,7 +7,9 @@ class PlagaPulgaYGarrapata inherits Plaga{
 class Plaga {
 	var property poblacion
 	method transmitirEnfermedades() = poblacion >=10
-	method atacar(elemento){poblacion *= 1.1}
+	method atacar(elemento){poblacion *= 1.1
+		                    elemento.recibirAtaque(self)
+	}
 }
 
 class PlagaCucaracha inherits Plaga {
@@ -17,7 +21,7 @@ class PlagaCucaracha inherits Plaga {
 }
 
 
-class PlagaPulgas inherits Plaga{
+class PlagaPulgas inherits PlagaPulgaYGarrapata{
 }
 
 
